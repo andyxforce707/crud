@@ -1,0 +1,360 @@
+#update {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: borber-box;
+  font-family: Arial;
+}
+
+body {
+  width: 80%;
+  min-width: 100vh;
+  padding: 10px 40px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(90deg, purple, violet);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 5px;
+  background: #fff;
+  padding: 20px 40px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+
+.container.active {
+  background: #111;
+  transition: 1s;
+}
+
+.container h1.title {
+  background: linear-gradient(90deg, purple, magenta);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  padding: 40px 20px 10px;
+  position: relative;
+  transition: 1s;
+}
+.container h1.title::before {
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, purple, transparent);
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 1s;
+}
+
+.container h1.title::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid purple;
+  background: #fff;
+  border-radius: 50%;
+  bottom: -7px;
+  left: -7px;
+  transition: 1s;
+}
+
+.container h1.title.active::after {
+  background: #111;
+  transition: 1s;
+}
+
+.container em {
+  margin-top: 4px;
+  margin-left: 10px;
+}
+
+.container em.active {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.container em a {
+  color: magenta;
+}
+
+.container h2 {
+  background: linear-gradient(90deg, purple, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+  padding: 10px 100px 10px 10px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.container h2::before {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, purple, transparent);
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* form */
+
+.container .form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin: 25px 30px;
+  padding: 5px 10px;
+}
+
+.container .form .input {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  width: 95%;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.container .form .input label {
+  text-indent: 10px;
+  color: #222;
+}
+
+.container .form .input label.active {
+  color: rgba(255, 255, 255, 0.9);
+  transition: 1s;
+}
+
+.container .form .input input {
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  height: 20px;
+  transition: 1s;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container .form .input input.active {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 1s;
+}
+
+.container .form .btn {
+  width: 98%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-top: 20px;
+}
+
+.container .form .btn button#submit {
+  padding: 10px 15px;
+  background: purple;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.container .form .btn button#submit:hover {
+  filter: brightness(1.2);
+}
+
+.container .form .btn button#update {
+  padding: 10px 15px;
+  background: #fff;
+  color: purple;
+  border-radius: 8px;
+  border: 1.5px solid purple;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.container .form .btn button#update:hover {
+  background: purple;
+  color: #fff;
+}
+
+/* container-b */
+
+.container-b {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  padding: 20px 40px;
+  border-top: 1px dashed purple;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+.container-b.active {
+  background: #111;
+  transition: 1s;
+}
+
+.container-b h2 {
+  background: linear-gradient(90deg, purple, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+  padding: 10px 100px 10px 10px;
+  position: relative;
+  width: 90%;
+}
+
+.container-b h2::before {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, purple, transparent);
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.container-b table {
+  width: 90%;
+  padding: 5px 10px;
+  margin-top: 15px;
+}
+
+.container-b table.active {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.container-b table thead th {
+  background: purple;
+  padding: 7px 12px;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.container-b table * {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 500ms;
+}
+
+.container-b table:hover * {
+  filter: brightness(1.1);
+}
+
+/* DOM */
+
+button.theme {
+  padding: 10px 20px;
+  position: fixed;
+  right: 70px;
+  bottom: 50px;
+  border-radius: 10px;
+  color: purple;
+  background: white;
+  border: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid purple;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button.theme:hover {
+  filter: brightness(1.1);
+}
+
+button.theme.active {
+  color: white;
+  background: purple;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+
+/* Screen responsif */
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    margin: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .container h1.title {
+    display: inline-block;
+    font-size: 26px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container .form {
+    width: 50%;
+    justify-content: start;
+    margin: 20px 10px;
+    padding: 5px 10px;
+  }
+
+  .container .form .input {
+    display: flex;
+    gap: 4px;
+    justify-content: start;
+    width: 95%;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  /* */
+  .container-b {
+    width: 100%;
+    margin: none;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .container-b h2 {
+    display: inline-block;
+    width: auto;
+  }
+
+  .container-b table {
+    width: 40%;
+    padding: 2px 4px;
+  }
+}

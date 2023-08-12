@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- active -->
+      <h1 class="title">CRUD Application with LOCAL STORAGE</h1>
+      <em>Created by <a href="https://instagram.com/andyxforce">@andyxforce</a> || <a href="https://andyxforce707.github.io/my_portfolio/portfolio/portfolio.index.html">My Portfolio</a></em>
+      <h2>Registration form</h2>
+
+      <div class="form">
+        <div class="input">
+          <label for="name">Name : </label>
+          <input type="text" id="name" class="form-control" placeholder="enter name" name="name" /><!-- active -->
+        </div>
+
+        <div class="input">
+          <label for="age">Age : </label>
+          <input type="text" id="age" class="form-control" placeholder="enter age" name="age" /><!-- active -->
+        </div>
+
+        <div class="input">
+          <label for="address">Address : </label>
+          <input type="text" id="address" class="form-control" placeholder="enter address" name="address" /><!-- active -->
+        </div>
+
+        <div class="input">
+          <label for="email">Email : </label>
+          <input type="text" id="email" class="form-control" placeholder="enter email" name="email" /><!-- active -->
+        </div>
+
+        <div class="btn">
+          <button title="Click to add Data" id="submit" onclick="addData()">Add data</button>
+          <button title="Click to update Data" id="update" onclick="addData()">Update</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-b">
+      <!-- active -->
+      <h2>Staff Data</h2>
+      <table class="x" id="crudTable" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Adress</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- DOM -->
+
+    <button title="switch theme" class="theme" onclick="toggleDarkMode();">Dark Mode</button>
+
+    <script src="script.js"></script>
+    <script>
+      const theme = document.querySelector('button.theme');
+
+      const mainTitle = document.querySelector('.container .title');
+
+      const createdBy = document.querySelector('.container em');
+
+      const container = document.querySelector('.container');
+      const containerB = document.querySelector('.container-b');
+      const table = document.querySelector('.container-b table');
+      const input = document.querySelector('.container .form .input input');
+      const input2 = document.querySelector('.container .form .input:nth-child(2) input');
+      const input3 = document.querySelector('.container .form .input:nth-child(3) input');
+      const input4 = document.querySelector('.container .form .input:nth-child(4) input');
+
+      const label = document.querySelector('.container .form .input label');
+      const label2 = document.querySelector('.container .form .input:nth-child(2) label');
+      const label3 = document.querySelector('.container .form .input:nth-child(3) label');
+      const label4 = document.querySelector('.container .form .input:nth-child(4) label');
+
+      // theme.addEventListener('click', () => {
+      //   container.classList.toggle('active');
+      //   containerB.classList.toggle('active');
+      //   input.classList.toggle('active');
+      //   input2.classList.toggle('active');
+      //   input3.classList.toggle('active');
+      //   input4.classList.toggle('active');
+
+      //   label.classList.toggle('active');
+      //   label2.classList.toggle('active');
+      //   label3.classList.toggle('active');
+      //   label4.classList.toggle('active');
+
+      //   table.classList.toggle('active');
+
+      //   //
+
+      //   theme.classList.toggle('active');
+      //   // If theme contain an active class, then execute code below
+      //   if (theme.classList.contains('active')) {
+      //     // Change text of theme element, replace with Light Mode
+      //     theme.textContent = 'Light Mode';
+      //   } else {
+      //     // Otherwise, Change text of theme element, replace with Dark Mode
+      //     theme.textContent = 'Dark Mode';
+      //   }
+      // });
+
+      const toggleDarkMode = function () {
+        container.classList.toggle('active');
+        containerB.classList.toggle('active');
+
+        mainTitle.classList.toggle('active');
+
+        createdBy.classList.toggle('active');
+
+        input.classList.toggle('active');
+        input2.classList.toggle('active');
+        input3.classList.toggle('active');
+        input4.classList.toggle('active');
+
+        label.classList.toggle('active');
+        label2.classList.toggle('active');
+        label3.classList.toggle('active');
+        label4.classList.toggle('active');
+
+        table.classList.toggle('active');
+
+        theme.classList.toggle('active');
+        // If theme contain an active class, then execute code below
+        if (theme.classList.contains('active')) {
+          // Change text of theme element, replace with Light Mode
+          theme.textContent = 'Light Mode';
+          console.log('Dark Mode : Enabled !');
+        } else {
+          // Otherwise, Change text of theme element, replace with Dark Mode
+          theme.textContent = 'Dark Mode';
+          console.log('Dark Mode : Disabled !');
+        }
+      };
+    </script>
+  </body>
+</html>
